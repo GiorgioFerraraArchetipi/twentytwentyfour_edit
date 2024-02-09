@@ -21,6 +21,52 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 	 */
 	function twentytwentyfour_block_styles() {
 
+		register_block_style (
+			'core/group',
+			array (
+				'name'				=> 'group',
+				'label'				=> __('Group', 'twentytwentyfour'),
+
+				'inline_style' 		=>
+				'.dropdown.dropdown-hidden {
+					opacity: 0;
+				}
+				
+				.dropdown {
+					transform: translate(0, -30px);
+					transition: all .4s cubic-bezier(.215, .61, .355, 1);
+					display: absolute;
+					z-index: 1;
+				}
+				
+				.navbar {
+					display: absolute;
+					z-index: 2;
+
+					filter: drop-shadow(0 5px 20px #ccc);
+				}
+				'
+			)
+		);
+		register_block_style (
+			'core/cover',
+			array (
+				'name'				=> 'cover',
+				'label'				=> __('Cover', 'twentytwentyfour'),
+
+				'inline_style' 		=>
+				'.cover {
+					display: fixed;
+					width: 100%;
+					height: 100%
+
+				}
+				
+				.cover .hide {
+					opacity: 0;
+				}'
+			)
+		);
 		register_block_style(
 			'core/details',
 			array(
