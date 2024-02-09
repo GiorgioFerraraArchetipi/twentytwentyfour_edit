@@ -29,6 +29,10 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 
 				'inline_style' 		=>
 				'
+				*:hover {
+					text-decoration: none !important;
+				}
+
 				.dropdown.hide {
 					transform: translate(0, -60px);
 					opacity: 0;
@@ -54,6 +58,14 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 					position: relative !important;
 					z-index: 0 !important;
 				}
+
+				.wp-block-navigation-item__content {
+					padding: 20px 0;
+				}
+
+				.active {
+					border-bottom: 2px solid #023585;
+				}
 				'
 			)
 		);
@@ -71,13 +83,13 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 				}
 
 				.cover-fade {
-					margin-top: 0;
-					margin-bottom: 0;
+					margin: auto;
 
 					position: relative;
 					z-index: 1;
 
-					transform: translate(0, -40vh);
+					top: -40vh;
+					left: 0;
 				}
 				
 				.cover {
