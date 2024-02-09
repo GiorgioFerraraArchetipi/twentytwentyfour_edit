@@ -28,22 +28,31 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 				'label'				=> __('Group', 'twentytwentyfour'),
 
 				'inline_style' 		=>
-				'.dropdown.dropdown-hidden {
+				'
+				.dropdown.hide {
+					transform: translate(0, -60px);
 					opacity: 0;
 				}
 				
 				.dropdown {
 					transform: translate(0, -30px);
 					transition: all .4s cubic-bezier(.215, .61, .355, 1);
-					display: absolute;
-					z-index: 1;
+					
+					position: relative;
+					z-index: 2;
 				}
 				
 				.navbar {
-					display: absolute;
-					z-index: 2;
+					position: relative;
+					z-index: 3;
 
-					filter: drop-shadow(0 5px 20px #ccc);
+					box-shadow: 0 10px 10px -5px #00000030;
+				}
+
+				.cover-target
+				{
+					position: relative !important;
+					z-index: 0 !important;
 				}
 				'
 			)
@@ -55,16 +64,40 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 				'label'				=> __('Cover', 'twentytwentyfour'),
 
 				'inline_style' 		=>
-				'.cover {
-					display: fixed;
-					width: 100%;
-					height: 100%
+				'
+				.cover-full {
+					padding-top: 0 !important;
+					padding-bottom: 0 !important;
+				}
 
+				.cover-fade {
+					margin-top: 0;
+					margin-bottom: 0;
+
+					position: relative;
+					z-index: 1;
+
+					transform: translate(0, -40vh);
 				}
 				
-				.cover .hide {
+				.cover {
+					width: 100%;
+					height: 100vh;
+					position: fixed;
+					top: 0;
+					left: 0;
+					margin-right: 0 !important;
+					margin-left: 0 !important;
+					opacity: 0.5;
+					z-index: 1;
+
+					transition: all .4s cubic-bezier(.215, .61, .355, 1);
+				}
+				
+				.cover.hide {
 					opacity: 0;
-				}'
+				}
+				'
 			)
 		);
 		register_block_style(

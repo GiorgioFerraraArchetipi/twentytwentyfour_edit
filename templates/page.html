@@ -4,4 +4,18 @@
 <main class="wp-block-group" style="margin-top:0">
 	<!-- wp:post-content {"lock":{"move":false,"remove":true},"layout":{"type":"constrained"}} /-->
 </main>
+
+<script>
+	const dropdown = document.querySelector('.dropdown');
+	const background = document.querySelector('.cover');
+
+	const links = document.querySelectorAll('.wp-block-navigation-item__content');
+	links.forEach( link => {
+		link.addEventListener('click', () => {
+			dropdown.classList.toggle('hide');
+			background.classList.toggle('hide');
+		});
+	});
+
+</script>
 <!-- /wp:group -->
